@@ -87,7 +87,7 @@ for model = nmodel:-1:1
         for k = 1:numel(Idx) % distractor
             model_x = (Iax - Ibx)'*c;
             model_y = pA_AB{model}(:,k,condition); % simulated data
-            tau     = fitGauss(model_x,model_y,Nfit);
+            tau     = fitGauss(model_x,model_y,Nfit)*sqrt(2);
             y       = 0.5 + 0.5 * erf(x/tau);
             patch([x fliplr(x)],[y fliplr(y)],ccc{condition}/255,...
                 'EdgeColor',ccc{condition}/255,...

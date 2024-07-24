@@ -47,8 +47,8 @@ for model = 3:-1:1
                 end
 
                 %%% analytical solution:
-                sd_possion = sqrt(scale.*[mu1,mu2,mu3]);
-                sd = sqrt(sd_possion.^2 + sigma(model).^2);
+                sd_poisson = sqrt(scale.*[mu1,mu2,mu3]);
+                sd = sqrt(sd_poisson.^2 + sigma(model).^2);
                 x = -5000:1:5000;
                 kk = [trapz(x,(normpdf(x,mu1,sd(1)).*(normcdf(x,mu2,sd(2))).*(normcdf(x,mu3,sd(3)))))
                       trapz(x,(normpdf(x,mu2,sd(2)).*(normcdf(x,mu1,sd(1))).*(normcdf(x,mu3,sd(3)))))
